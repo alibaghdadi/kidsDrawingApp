@@ -39,6 +39,17 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     }
 
+    override fun onDraw(canvas: Canvas) {
+//        TODO("Convert Canvas to Canvas? if fails")
+        super.onDraw(canvas)
+        canvas.drawBitmap(mCanvasBitmap!!, 0F, 0F, mCanvasPaint)
+        if (!mDrawPath!!.isEmpty) {
+            mDrawPaint!!.strokeWidth = mDrawPath!!.brushThickness
+            mDrawPaint!!.color = mDrawPath!!.color
+            canvas.drawPath(mDrawPath!!, mDrawPaint!!)
+        }
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         mCanvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
