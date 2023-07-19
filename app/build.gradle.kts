@@ -8,6 +8,10 @@ android {
     namespace = "com.example.kidsdrawingapp"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.kidsdrawingapp"
         minSdk = 21
