@@ -3,7 +3,6 @@ package com.example.kidsdrawingapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kidsdrawingapp.databinding.ActivityMainBinding
-import java.util.zip.Inflater
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +13,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.drawingView.setSizeForBrush(20F)
+        binding.drawingView.setSizeForBrush(10F)
     }
 }
