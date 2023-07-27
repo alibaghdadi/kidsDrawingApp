@@ -3,4 +3,5 @@
     <string name="small_brush">The small brush</string>
     <string name="medium_brush">The medium brush</string>
     <string name="large_brush">The large brush</string>
+    <string name="brush_size">Brush size</string>
 </resources>
