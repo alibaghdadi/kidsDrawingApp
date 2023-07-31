@@ -33,8 +33,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="1dp"
-            android:contentDescription="@string/black_color"
-            android:src="@drawable/black_color"
+            android:contentDescription="@string/white_color"
+            android:src="@drawable/white_color"
             android:tag="@color/white" />
 
         <ImageButton
@@ -42,8 +42,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="1dp"
-            android:contentDescription="@string/white_color"
-            android:src="@drawable/white_color"
+            android:contentDescription="@string/black_color"
+            android:src="@drawable/black_color"
             android:tag="@color/black" />
 
         <ImageButton
