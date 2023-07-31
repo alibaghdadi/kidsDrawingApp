@@ -48,6 +48,11 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         mDrawPaint!!.strokeWidth = mBrushSize
     }
 
+    fun setColorForBrush(newColor: String) {
+        color = Color.parseColor(newColor)
+        mDrawPaint!!.color = color
+    }
+
     override fun onDraw(canvas: Canvas) {
 //        TODO("Convert Canvas to Canvas? if fails")
         super.onDraw(canvas)
@@ -55,7 +60,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
         for (path in mPaths) {
             mDrawPaint!!.strokeWidth = path.brushThickness
-            mDrawPaint!!.color = mDrawPath!!.color
+            mDrawPaint!!.color = path.color
             canvas.drawPath(path, mDrawPaint!!)
         }
 

@@ -17,9 +17,51 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.drawingView.setSizeForBrush(5F)
+
         binding.imBrushSize.setOnClickListener {
             showBrushSizeChooserDialog()
         }
+
+        binding.ibRedColor.setOnClickListener {
+            val color = binding.ibRedColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibBlackColor.setOnClickListener {
+            val color = binding.ibBlackColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibWhiteColor.setOnClickListener {
+            val color = binding.ibWhiteColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibYellowColor.setOnClickListener {
+            val color = binding.ibYellowColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibGreenColor.setOnClickListener {
+            val color = binding.ibGreenColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibBlueColor.setOnClickListener {
+            val color = binding.ibBlueColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibPurpleColor.setOnClickListener {
+            val color = binding.ibPurpleColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
+        binding.ibPinkColor.setOnClickListener {
+            val color = binding.ibPinkColor.tag.toString()
+            binding.drawingView.setColorForBrush(color)
+        }
+
     }
 
     private fun showBrushSizeChooserDialog() {
