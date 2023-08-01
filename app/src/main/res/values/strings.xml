@@ -12,4 +12,5 @@
     <string name="purple_color">Purple Color</string>
     <string name="red_color">Red Color</string>
     <string name="pink_color">Pink Color</string>
+    <string name="image_description">Set Image Background</string>
 </resources>

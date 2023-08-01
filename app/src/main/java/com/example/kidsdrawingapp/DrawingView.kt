@@ -19,7 +19,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var mDrawPaint: Paint? = null
     private var mCanvasPaint: Paint? = null
     private var canvas: Canvas? = null
-    private var color = Color.WHITE
+    private var color = Color.BLACK
     private var mBrushSize: Float = 0F
     private val mPaths = ArrayList<CustomPath>()
 

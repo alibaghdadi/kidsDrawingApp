@@ -6,15 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.kidsdrawingapp.DrawingView
-        android:id="@+id/drawing_view"
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
+        android:padding="1dp"
         app:layout_constraintBottom_toTopOf="@id/layout_color"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image_description" />
+
+        <com.example.kidsdrawingapp.DrawingView
+            android:id="@+id/drawing_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/layout_color"
@@ -26,12 +40,12 @@
         app:layout_constraintBottom_toTopOf="@id/im_brush_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/drawing_view">
+        app:layout_constraintTop_toBottomOf="@id/frame_layout">
 
         <ImageButton
             android:id="@+id/ib_white_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
             android:contentDescription="@string/white_color"
             android:src="@drawable/white_color"
@@ -39,63 +53,70 @@
 
         <ImageButton
             android:id="@+id/ib_black_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/black_color"
             android:src="@drawable/black_color"
             android:tag="@color/black" />
 
         <ImageButton
             android:id="@+id/ib_blue_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/blue_color"
             android:src="@drawable/blue_color"
             android:tag="@color/blue" />
 
         <ImageButton
             android:id="@+id/ib_yellow_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/yellow_color"
             android:src="@drawable/yellow_color"
             android:tag="@color/yellow" />
 
         <ImageButton
             android:id="@+id/ib_green_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/green_color"
             android:src="@drawable/green_color"
             android:tag="@color/green" />
 
         <ImageButton
             android:id="@+id/ib_purple_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/purple_color"
             android:src="@drawable/purple_color"
             android:tag="@color/purple" />
 
         <ImageButton
             android:id="@+id/ib_red_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/red_color"
             android:src="@drawable/red_color"
             android:tag="@color/red" />
 
         <ImageButton
             android:id="@+id/ib_pink_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="1dp"
+            android:background="@color/white"
             android:contentDescription="@string/pink_color"
             android:src="@drawable/pink_color"
             android:tag="@color/pink" />
