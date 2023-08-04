@@ -14,4 +14,6 @@
     <string name="pink_color">Pink Color</string>
     <string name="image_description">Set Image Background</string>
     <string name="ib_gallery">Browse a picture to your background.</string>
+    <string name="ib_des_clear">Clear drawing view.</string>
+    <string name="eraser">Eraser</string>
 </resources>
