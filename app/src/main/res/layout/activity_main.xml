@@ -147,6 +147,7 @@
             android:src="@drawable/ic_brush" />
 
         <ImageButton
+            android:id="@+id/ib_gallery"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="2dp"
