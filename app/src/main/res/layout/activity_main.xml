@@ -168,5 +168,14 @@
         <!--            android:layout_margin="2dp"-->
         <!--            android:contentDescription="@string/eraser"-->
         <!--            android:src="@drawable/ic_eraser" />-->
+
+        <ImageButton
+            android:id="@+id/ib_undo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/undo"
+            android:src="@drawable/ic_undo" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

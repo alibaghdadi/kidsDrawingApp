@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.drawingView.setSizeForBrush(5F)
 
+        binding.ibUndo.setOnClickListener {
+            binding.drawingView.onClickUndo()
+        }
+
         binding.imBrushSize.setOnClickListener {
             showBrushSizeChooserDialog()
         }
