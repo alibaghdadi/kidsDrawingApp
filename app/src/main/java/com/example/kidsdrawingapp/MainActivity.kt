@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
             showBrushSizeChooserDialog()
         }
 
+        binding.ibClear.setOnClickListener {
+            binding.drawingView.setClearView()
+        }
+
         binding.ibRedColor.setOnClickListener {
             val color = binding.ibRedColor.tag.toString()
             binding.drawingView.setColorForBrush(color)

@@ -39,6 +39,11 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path()
 
+    fun setClearView() {
+        mPaths.clear()
+        invalidate()
+    }
+
     fun setSizeForBrush(newSize: Float) {
         mBrushSize = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,
