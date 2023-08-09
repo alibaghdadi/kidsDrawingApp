@@ -177,5 +177,13 @@
             android:contentDescription="@string/undo"
             android:src="@drawable/ic_undo" />
 
+        <ImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/save"
+            android:src="@drawable/ic_save" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

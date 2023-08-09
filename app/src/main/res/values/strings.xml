@@ -17,4 +17,5 @@
     <string name="ib_des_clear">Clear drawing view.</string>
     <string name="eraser">Eraser</string>
     <string name="undo">undo</string>
+    <string name="save">Save</string>
 </resources>
