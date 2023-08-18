@@ -18,4 +18,5 @@
     <string name="eraser">Eraser</string>
     <string name="undo">undo</string>
     <string name="save">Save</string>
+    <string name="please_wait">Please Wait...</string>
 </resources>

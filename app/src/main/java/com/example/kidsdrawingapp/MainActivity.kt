@@ -3,7 +3,6 @@ package com.example.kidsdrawingapp
 import android.Manifest
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -13,15 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.withStyledAttributes
 import androidx.lifecycle.lifecycleScope
 import com.example.kidsdrawingapp.databinding.ActivityMainBinding
+import com.example.kidsdrawingapp.databinding.DialogCustomProgressBinding
 import com.example.kidsdrawingapp.databinding.DialogueBrushSizeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,7 +31,9 @@ import java.io.FileOutputStream
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var dialogCustomProgressBinding: DialogCustomProgressBinding
     private lateinit var brushSizeDialogBinding: DialogueBrushSizeBinding
+    private var customProgressDialog: Dialog? = null
 
     private val openGalleryLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -85,6 +85,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.ibSave.setOnClickListener {
+
+            showProgressDialog()
+
             if (isReadStorageAllowed()) {
                 lifecycleScope.launch {
                     saveBitmapFile(getBitmapFromView(binding.frameLayout))
@@ -146,6 +149,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun showProgressDialog() {
+        customProgressDialog = Dialog(this@MainActivity)
+
+        dialogCustomProgressBinding = DialogCustomProgressBinding.inflate(layoutInflater)
+        val view = dialogCustomProgressBinding.root
+
+        customProgressDialog?.setContentView(view)
+        customProgressDialog?.show()
+    }
+
+    private fun cancelProgressDialog() {
+        if (customProgressDialog != null) {
+            customProgressDialog?.dismiss()
+            customProgressDialog = null
+        }
+    }
+
     private fun getBitmapFromView(view: View): Bitmap {
         val returnedBitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(returnedBitmap)
@@ -183,6 +203,8 @@ class MainActivity : AppCompatActivity() {
                     result = file.absolutePath
 
                     runOnUiThread {
+                        cancelProgressDialog()
+                        
                         if (result.isNotEmpty()) {
                             Toast.makeText(
                                 this@MainActivity,
