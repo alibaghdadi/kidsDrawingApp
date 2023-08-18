@@ -204,7 +204,7 @@ class MainActivity : AppCompatActivity() {
 
                     runOnUiThread {
                         cancelProgressDialog()
-                        
+
                         if (result.isNotEmpty()) {
                             Toast.makeText(
                                 this@MainActivity,
